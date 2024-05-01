@@ -1,0 +1,169 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+        <style>
+            p{
+                font-size:30px;
+                margin-top:10%;
+                font-weight: bold;
+                align-items: center;
+            }
+
+            .maindiv{
+                border: 5px rgb(164, 246, 229) ridge;
+                border-radius: 20px;
+            }
+
+            #nextbtn, #backbtn{
+                width: 30%;
+                font-size:30px;
+                margin-right: 5%
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:99%;
+                height:99%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .imgdiv{
+                width:500px;
+                height:450px;
+            }
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+            #story{
+                font-size: 22px;
+                padding:10px;
+                border-radius: 20px;
+            }
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <h2 id="about"> What are we learning today?</h2>
+            <div class="maindiv container">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv" style= "height: 450px;">
+                   <img id="family" src="2.jpg" style="width:100%; height:90%; margin-top:5%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" style= "height: 450px;">
+                   <p id="story" style="text-align:left; width:100%; margin-top:10%;"> 
+                    Nouns are words that name people, places, things, or
+                    ideas. They help us identify and refer to specific
+                    entities in our language. <br><br>
+                   A list of nouns commonly used is: <br>
+                
+                   ● Animal: Cat <br>
+                   ● Place: Park <br>
+                   ● Thing: Bicycle <br>
+                   ● Person: Girl <br> 
+                </p> 
+            </div>
+        </center>
+        </div>
+        <br>
+        <div class="" style="text-align:center; padding-top:1%">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+            
+
+        </div>
+    
+
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg",];
+            var para=["Once upon a time, in the quaint village of Hangleton,there lived a young girl named Mary. Mary was a spirited and inquisitive child, with a mop of curly hair and eyes that sparkled with curiosity. <br> <br>She lived in a cosy cottage with her parents, surrounded by lush green fields, groves and towering trees.",
+                    "Nouns are words that <i style='color:blue'>name people, places, things, or ideas</i>. We encounter nouns all the time in our everyday language, and they help us communicate and understand the world around us. <br> <br>As we continue with the story, let's pay attention to the nouns we encounter and see how they help us understand the characters, settings, and events.",
+                    "One bright and sunny morning, as Mary was exploring the woods near her home, she stumbled upon a hidden path that she had never noticed before. Intrigued, she followed the winding trail deeper into the forest, her heart pounding with excitement.",
+
+                     "After what felt like an eternity of twists and turns, Mary emerged into a sunlit clearing and gasped in wonder. Before her lay a breathtakingly beautiful garden, unlike anything she had ever seen before. The air was filled with the sweet fragrance of flowers, and the trees whispered secrets in the gentle breeze.",
+                     "Nouns are categorised in various ways, and we'll start by exploring the five primary types. These include<br>    ● Proper noun <br>  ● Common noun <br>  ● Collective noun <br> ● Abstract noun <br>  ● Concrete noun<br>",
+                     "Mary 's eyes widened with awe as she wandered through the garden, marvelling at its beauty. Each flower seemed to shimmer with its own unique magic, from the delicate bluebells that tinkled like bells to the fiery marigolds that glowed with an inner light.",
+                    "As she explored further, Mary discovered that the garden was filled with wondrous surprises. There were roses that could grant wishes, daisies that could bring laughter, and sunflowers that could light up the darkest night. She felt as though she had stumbled upon a hidden world of enchantment, just waiting to be discovered.",  
+                    ]
+            
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.fontSize="18px"
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "Let's discuss some examples from the story: ";
+                    document.getElementById("story").innerHTML = " <u> Proper Noun: </u> A proper noun identifies a specific person or place, such as names.<br> For instance, your name serves as an example of a proper noun, and the names of your friends fall into this category too. <br> <u> Common Noun: </u> Common nouns refer to general categories of people, things, or objects.<br> Examples of common nouns include girl, boy, city, fruit, or vegetable. <br> <u> Collective Noun: </u> Collective nouns represent groups of people or things. <br> <u>Abstract Noun: </u> Abstract nouns denote qualities, actions, processes,ideas, or states. <br> <u> Concrete Noun: </u> Concrete nouns are tangible and can be perceived through the senses (sight, touch, hearing).";
+                }
+                else{
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="The Enchanted Garden Part 1"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+            function newpage(){
+                window.location="ac2.html"
+            }
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "2.jpg";
+                    document.getElementById("about").innerHTML="NOUNS"
+                    document.getElementById("story").innerHTML = ' Nouns are words that name people, places, things, or ideas. They help us identify and refer to specific entities in our language. <br><br>   A list of nouns commonly used is: <br>   ● Animal: Cat <br>   ● Place: Park <br> ● Thing: Bicycle <br>    ● Person: Girl <br> ';
+                }
+                else{
+                document.getElementById("story").style.fontSize="22px"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
